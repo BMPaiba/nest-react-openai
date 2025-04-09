@@ -1,3 +1,4 @@
+import { DashboardLayout } from "@/presentation/layouts/DashboardLayout";
 import { AssistantPage } from "@/presentation/pages/assitant/AssistantPage";
 import { AudioToTextPage } from "@/presentation/pages/audio-to-text/AudioToTextPage";
 import { ImageGenerationPage } from "@/presentation/pages/image-generation/ImageGenerationPage";
@@ -12,16 +13,18 @@ import { Route, Routes } from "react-router";
 export const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<div>Hello World!</div>} />
-      <Route path="assistant" element={<AssistantPage />} />
-      <Route path="audio-to-text" element={<AudioToTextPage />} />
-      <Route path="image-tunning" element={<ImageTunningPage />} />
-      <Route path="image-generation" element={<ImageGenerationPage />} />
-      <Route path="text-to-audio" element={<TextToAudioPage />} />
-      <Route path="translate" element={<TranslatePage />} />
-      <Route path="pros-cons-stream" element={<ProsConsStreamPage />} />
-      <Route path="pros-cons" element={<ProsConsPage />} />
-      <Route path="orthography" element={<OrthographyPage />} />
+      <Route element={<DashboardLayout />}>
+        <Route path="/" element={<div>Hello World!</div>} />
+        <Route path="assistant" element={<AssistantPage />} />
+        <Route path="audio-to-text" element={<AudioToTextPage />} />
+        <Route path="image-tunning" element={<ImageTunningPage />} />
+        <Route path="image-generation" element={<ImageGenerationPage />} />
+        <Route path="text-to-audio" element={<TextToAudioPage />} />
+        <Route path="translate" element={<TranslatePage />} />
+        <Route path="pros-cons-stream" element={<ProsConsStreamPage />} />
+        <Route path="pros-cons" element={<ProsConsPage />} />
+        <Route path="orthography" element={<OrthographyPage />} />
+      </Route>
     </Routes>
   );
 };
